@@ -6,17 +6,19 @@
         <h2 class="section-heading text-uppercase">{{ site.data.sitetext[site.locale].contact.title }}</h2>
       </div>
     </div>
-    <div class="row d-flex justify-content-center">
+    <div style=padding-top:10px;" class="row d-flex justify-content-center">
       {% for contact in site.data.sitetext[site.locale].contact.list %}
-      <div class="col-sm-4">
-        <div class="team-member">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="{{ contact.icon | default: " fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">{{ contact.title | markdownify }}</h4>
+      <a href="{{contact.link}}">
+        <div class="col-sm-4">
+          <div class="team-member">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="{{ contact.icon | default: " fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 style="color:white" class="service-heading">{{ contact.title | markdownify }}</h4>
+          </div>
         </div>
-      </div>
+      </a>
       {% endfor %}
     </div>
   </div>
